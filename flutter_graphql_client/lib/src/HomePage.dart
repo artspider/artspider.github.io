@@ -14,8 +14,7 @@ class _HomePageState extends State<HomePage> {
   query{
     users{
       _id,
-      nombre,
-      aPaterno,
+      nombreUsuario,
       email
     }
   }
@@ -48,7 +47,7 @@ class _HomePageState extends State<HomePage> {
             itemCount: result.data['users'].length,
             itemBuilder: (context, index) {
               return ListTile(
-                title: Text(result.data['users'][index]['nombre']),
+                title: Text(result.data['users'][index]['nombreUsuario']),
                 subtitle: Text(result.data['users'][index]['email']),
               );
             },

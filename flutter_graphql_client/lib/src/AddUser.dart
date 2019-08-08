@@ -6,20 +6,16 @@ class AddUser extends StatefulWidget {
 }
 
 class _AddUserState extends State<AddUser> {
-  final _nombreController = TextEditingController();
-  final _aPaternoController = TextEditingController();
-  final _aMaternoController = TextEditingController();
-  final _fNacimientoController = TextEditingController();
+  final _nombreUsuarioController = TextEditingController();
   final _emailController = TextEditingController();
+  final _contrasenaController = TextEditingController();
 
   String mutation = '''
-  mutation SignUp(\$input: UserInput) {
+  mutation signUp(\$input: UserInput!) {
   signUp(input: \$input) {
-    _id
-    nombre
-    aPaterno
-    aMaterno
+    nombreUsuario
     email
+    contrasena
   }
 }
   '''
@@ -37,24 +33,16 @@ class _AddUserState extends State<AddUser> {
             child: Column(
               children: <Widget>[
                 TextField(
-                  decoration: InputDecoration(helperText: "Nombre"),
-                  controller: _nombreController,
-                ),
-                TextField(
-                  decoration: InputDecoration(helperText: "paterno"),
-                  controller: _aPaternoController,
-                ),
-                TextField(
-                  decoration: InputDecoration(helperText: "Materno"),
-                  controller: _aMaternoController,
-                ),
-                TextField(
-                  decoration: InputDecoration(helperText: "F. Nacimiento"),
-                  controller: _fNacimientoController,
+                  decoration: InputDecoration(helperText: "Nombre de Usuario"),
+                  controller: _nombreUsuarioController,
                 ),
                 TextField(
                   decoration: InputDecoration(helperText: "Email"),
                   controller: _emailController,
+                ),
+                TextField(
+                  decoration: InputDecoration(helperText: "Contraseña"),
+                  controller: _contrasenaController,
                 ),
                 MaterialButton(
                   child: Text(
@@ -63,17 +51,13 @@ class _AddUserState extends State<AddUser> {
                   ),
                   color: Colors.blue,
                   onPressed: () {
-                    print(_nombreController.text +
-                        _aPaternoController.text +
-                        _aMaternoController.text +
-                        _fNacimientoController.text +
+                    print(_nombreUsuarioController.text +
+                        _contrasenaController.text +
                         _emailController.text);
                     runMutation({
                       'input': {
-                        'nombre': _nombreController.text,
-                        'aPaterno': _aPaternoController.text,
-                        'aMaterno': _aMaternoController.text,
-                        'fechaNacimiento': _fNacimientoController.text,
+                        'nombreUsuario': _nombreUsuarioController.text,
+                        'contrasena': _contrasenaController.text,
                         'email': _emailController.text,
                       }
                     });

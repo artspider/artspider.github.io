@@ -1,15 +1,13 @@
-const { gql } = require("apollo-server-azure-functions");
+const { gql } = require ("apollo-server-azure-functions");
 
 const typeDefs = gql`
   type User {
     _id: String!
-    nombreUsuario: String!
-    nombre: String
-    aPaterno: String
+    nombre: String!
+    aPaterno: String!
     aMaterno: String
-    fechaNacimiento: String
+    fechaNacimiento: String!
     email: String!
-    contrasena: String!
     sexo: Int
     peso: Int
     talla: Int
@@ -56,13 +54,11 @@ const typeDefs = gql`
   }
 
   input UserInput {
-    nombreUsuario: String!
-    nombre: String
-    aPaterno: String
+    nombre: String!
+    aPaterno: String!
     aMaterno: String
-    fechaNacimiento: String
+    fechaNacimiento: String!
     email: String!
-    contrasena: String!
     sexo: Int
     peso: Int
     talla: Int
@@ -79,7 +75,6 @@ const typeDefs = gql`
     ciudad: String
     estado: String
     codigoPostal: Int
-    cuenta: CuentaInput
   }
 
   input PruebaInput {

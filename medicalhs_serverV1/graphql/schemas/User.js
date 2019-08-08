@@ -1,18 +1,15 @@
 const Joi = require("joi");
 
 const schema = Joi.object().keys({
-  nombreUsuario: Joi.string()
+  nombre: Joi.string()
     .min(5)
     .max(15)
     .required()
     .label("Nombre"),
-  nombre: Joi.string()
-    .min(5)
-    .max(15)
-    .label("Nombre"),
   aPaterno: Joi.string()
     .min(5)
-    .max(15),
+    .max(15)
+    .required(),
   aMaterno: Joi.string()
     .min(5)
     .max(15),
@@ -20,8 +17,6 @@ const schema = Joi.object().keys({
   email: Joi.string()
     .email()
     .required(),
-  contrasena: Joi.string()
-    .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/),
   sexo: Joi.number(),
   peso: Joi.number(),
   talla: Joi.number(),

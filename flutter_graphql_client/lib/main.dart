@@ -8,8 +8,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HttpLink httpLink = HttpLink(
-      uri:
-          'https://mhsserver.azurewebsites.net/graphql?code=EArqvtFw%2FvitHOvYzsARhD7szq3xl8WWgVAOmoaP3oKBz4az7u588Q%3D%3D'
+      uri:          
+          'https://mhsserver.azurewebsites.net/graphql?code=GxbtH2O8B6jxS0FRtE9RrcfUylSau5pgPm424BKL7R2lPrfl9MpaqA%3D%3D'
     );
 
     ValueNotifier<GraphQLClient> client = ValueNotifier(
