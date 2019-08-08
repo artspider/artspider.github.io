@@ -1,0 +1,16 @@
+{
+  "name": "r2dev-example",
+  "scripts": {
+    "test": "echo \"No tests yet...\""
+  },
+  "author": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "apollo-server-azure-functions": "^2.8.1",
+    "graphql": "^14.4.2"
+  }
+}

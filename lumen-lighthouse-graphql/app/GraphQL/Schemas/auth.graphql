@@ -1,0 +1,22 @@
+type User {
+  id: ID! @globalId
+  name: String
+  email: String
+  photo_url: String
+  created_at: DateTime
+  updated_at: DateTime
+  # tasks: [Task!]! @hasMany
+}
+
+type LoginPayload {
+  user: User!
+  token: String!
+}
+
+extend type Mutation {
+  createUser(
+    name: String!
+    password: String!
+    email: String!
+  ): ResponsesPayload @interaction(class: "App\\Interactions\\UserCreate")
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue Tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css"
+    />
+  </head>
+  <body>
+    <div id="app" class="container mt-5">
+      <h1>{{ titulo }}</h1>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Fruta a agregar"
+          aria-label="Fruta a agregar"
+          aria-describedby="basic-addon2"
+          v-model="nuevaFruta"
+          @keyup.enter="agregarFruta"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            @click="agregarFruta()"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+
+      <table class="table table-light">
+        <thead class="thead-light">
+          <tr>
+            <th>Fruta</th>
+            <th>Cantidad</th>
+            <th>Agregar</th>
+            <th>Descontar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(fruta, index) in frutas" :key="index">
+            <td>{{ fruta.nombre }}</td>
+            <td>{{ fruta.cantidad }}</td>
+            <td @click="fruta.cantidad++">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </td>
+            <td @click="fruta.cantidad--">
+              <i class="fa fa-minus" aria-hidden="true"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4 class="text-white bg-info p-3">
+        <p class="text-right">Total: {{ sumarFrutas }}</p>
+      </h4>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="01.js"></script>
+  </body>
+</html>

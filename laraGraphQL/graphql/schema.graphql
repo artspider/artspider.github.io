@@ -1,0 +1,45 @@
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-01-01 13:00:00`."
+scalar DateTime
+    @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+"A date string with format `Y-m-d`, e.g. `2011-05-23`."
+scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
+
+type Query {
+    posts: [Post!]! @all
+    post(id: Int! @eq): Post @find
+    users: [User] @all
+    user (id: Int! @eq): User @find
+    latestPost: Post!
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+    posts: [Post!]! @hasMany
+}
+
+type Post {
+    id: ID!
+    title: String!
+    content: String!
+    user: User! @belongsTo
+    comments: [Comment!]! @hasMany
+}
+
+type Comment {
+    id: ID!
+    reply: String!
+    post: Post! @belongsTo
+}
+
+type Mutation {
+    createUser(
+        name: String! @rules(apply: ["required", "min:4"])
+        email: String! @rules(apply: ["email", "unique:users"])
+        password: String! @rules(apply: ["min:4"]) @bcrypt
+    ): User! @create
+}

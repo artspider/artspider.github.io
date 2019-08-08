@@ -1,0 +1,17 @@
+#import ./Schemas/auth.graphql
+
+scalar DateTime @scalar(class: "DateTime")
+
+type ResponsesPayload {
+  success: Boolean!
+  msg: String
+  payload: String
+}
+
+type Query @group(middleware: ["auth"]) {
+  viewer: User
+}
+
+type Mutation {
+  login(username: String!, password: String!): LoginPayload
+}
