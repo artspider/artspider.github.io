@@ -6,7 +6,6 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      
       "methods": [
         "get",
         "post"
@@ -15,7 +14,7 @@
     {
       "type": "http",
       "direction": "out",
-      "name": "res"
+      "name": "$return"
     }
   ]
 }

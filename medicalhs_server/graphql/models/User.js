@@ -1,24 +1,12 @@
 const { Schema, model } = require("mongoose");
 
 const UserSchema = new Schema({
-  nombreUsuario: {
-    type: String,
-    validate: {
-      validator: nombreUsuario => User.doesntExist({ nombreUsuario }),
-      message: ({ value }) => `El nombre de usuario ${value} ya esta en uso.`
-    }
-  },
+  nombreUsuario: String,
   nombre: String,
   aPaterno: String,
   aMaterno: String,
   fechaNacimiento: Date,
-  email: {
-    type: String,
-    validate: {
-      validator: email => User.doesntExist({ email }),
-      message: ({ value }) => `La cuenta ${value} ya esta en uso.`
-    }
-  },
+  email: String,
   contrasena: String,
   sexo: Number,
   peso: Number,
@@ -37,10 +25,6 @@ const UserSchema = new Schema({
   estado: String,
   codigoPostal: Number
 });
-
-UserSchema.statics.doesntExist = async function (options) {
-  return await this.where(options).countDocuments() === 0
-}
 
 const User = model("user", UserSchema);
 module.exports = User;

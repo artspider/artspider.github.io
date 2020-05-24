@@ -1,1 +1,0 @@
-Figure is an animation demonstrating how a L.A.N. switch makes forwarding decisions based upon the destination address of an incoming frame.
