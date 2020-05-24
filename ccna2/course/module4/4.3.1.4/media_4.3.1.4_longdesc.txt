@@ -1,1 +1,0 @@
-Figure is an interactive media element that presents a network with documented addressing information and allows the learner to correctly assemble a routing table entry.

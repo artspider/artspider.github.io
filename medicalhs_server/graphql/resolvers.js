@@ -8,8 +8,7 @@ const resolvers = {
   Query: {
     hello: () => "Hello world!",
 
-    users: (parent, user, context) => {
-      console.log(context.req)
+    users: (parent, user) => {
       const users = User.find({});
       return users;
     },

@@ -12,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController apatController = TextEditingController();
   final String myQuery = '''
   query{
-    cuentas{
+    users{
       _id,
       nombreUsuario,
       email
@@ -34,7 +34,6 @@ class _HomePageState extends State<HomePage> {
         }) {
           if (result.data == null) {
             print('Ningun resultado');
-            print((result.errors));
             return Center(
               child: CircularProgressIndicator(),
             );
@@ -45,11 +44,11 @@ class _HomePageState extends State<HomePage> {
             );
           }
           return ListView.builder(
-            itemCount: result.data['cuentas'].length,
+            itemCount: result.data['users'].length,
             itemBuilder: (context, index) {
               return ListTile(
-                title: Text(result.data['cuentas'][index]['nombreUsuario']),
-                subtitle: Text(result.data['cuentas'][index]['email']),
+                title: Text(result.data['users'][index]['nombreUsuario']),
+                subtitle: Text(result.data['users'][index]['email']),
               );
             },
           );

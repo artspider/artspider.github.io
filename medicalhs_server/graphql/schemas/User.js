@@ -5,7 +5,7 @@ const schema = Joi.object().keys({
     .min(5)
     .max(15)
     .required()
-    .label("nombreUsuario"),
+    .label("Nombre"),
   nombre: Joi.string()
     .min(5)
     .max(15)
@@ -21,20 +21,7 @@ const schema = Joi.object().keys({
     .email()
     .required(),
   contrasena: Joi.string()
-    .regex(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
-    )
-    .label("Contrasena")
-    .options({
-      language: {
-        string: {
-          regex: {
-            base:
-              "Debe tener al menos una letra minúscula, una mayúscula, un número y un caracter especial."
-          }
-        }
-      }
-    }),
+    .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/),
   sexo: Joi.number(),
   peso: Joi.number(),
   talla: Joi.number(),

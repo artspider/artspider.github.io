@@ -1,1 +1,0 @@
-This is an interactive media element that tests the learner’s ability to identify whether a given description is a feature of Store-and-forward or cut-through switching.
