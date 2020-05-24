@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HomePage on Blog - TecIguala</title>
+    <link>/</link>
+    <description>Recent content in HomePage on Blog - TecIguala</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ES</language>
+    <lastBuildDate>Thu, 09 Apr 2020 13:16:35 -0500</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Uno</title>
+      <link>/dise%C3%B1o/uno/</link>
+      <pubDate>Thu, 09 Apr 2020 13:16:35 -0500</pubDate>
+      
+      <guid>/dise%C3%B1o/uno/</guid>
+      <description>Hugo new Create a new content file and automatically set the date and title. It will guess which kind of file to create based on the path provided.
+You can also specify the kind with -k KIND.
+If archetypes are provided in your theme or site, they will be used.
+Ensure you run this within the root directory of your site.</description>
+    </item>
+    
+    <item>
+      <title>Covid an Bill</title>
+      <link>/programacion/covi/</link>
+      <pubDate>Tue, 07 Apr 2020 22:00:47 -0500</pubDate>
+      
+      <guid>/programacion/covi/</guid>
+      <description>El covid-21 </description>
+    </item>
+    
+    <item>
+      <title>Stay Creative, Stay Inspired (April 2020 Wallpapers Edition)</title>
+      <link>/programacion/pweb/stay/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/programacion/pweb/stay/</guid>
+      <description>In times like these where our everyday life is pausing and we’re trying to find strategies to cope with this situation we all find ourselves in at the moment, little routines can help give us a sense of security and familiarity — no matter if it’s having a cup of coffee in the midday sun on your balcony, calling an old friend in the evenings, or trying out a new recipe every day.</description>
+    </item>
+    
+  </channel>
+</rss>
