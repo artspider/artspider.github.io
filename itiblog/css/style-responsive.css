@@ -1,0 +1,259 @@
+@font-face {
+    font-family: 'Hagin';
+    src: url('/fonts/HaginCapsMedium-Medium.woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-LightItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins-normal';
+    src: url('/fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'GreatVibes';
+    src: url('/fonts/GreatVibes-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('/fonts/Inconsolata-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('/fonts/Roboto-Bold.ttf');
+}
+
+.navbar {
+    max-height: 130px;
+    border-bottom: solid;
+    border-color: #858585;
+    border-width: 1px;
+}
+
+.navbar-item p {
+    font-family: GreatVibes;
+    font-size: 1.125em;
+}
+
+a .navbar-item {
+    font-family: Inconsolata;
+    font-size: 1em;
+    color: b9b9b9;
+}
+
+aside {
+    display: none;
+}
+
+section {
+    border: none;
+    width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    article {
+        display: block;
+        height: auto;
+        position: relative;
+    }
+    article .article-img {
+        width: 100%;
+        max-width: 465px;
+        margin: 0 auto;
+    }
+    article .article-phg {
+        width: 100%;
+        margin: 0px;
+    }
+    .article-phg .article-phg-header {
+        position: absolute;
+        top: 10px;
+    }
+    .article-phg .article-phg-intro {
+        width: 100%;
+    }
+    .article-phg-intro p {
+        letter-spacing: normal;
+    }
+    .article-date .image {
+        display: none;
+    }
+    .date-pgh {
+        position: absolute;
+        top: 11px;
+        right: 10px;
+    }
+    .article-date .image-save {
+        top: 2px;
+        position: relative;
+        left: 345px;
+    }
+}
+
+
+/* article {
+    width: 100%;
+    height: 185px;
+    display: flex;
+}
+
+article .article-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 9.77%;
+   
+}
+
+article .article-img {
+    width: 25.86%;
+    margin: auto 0;
+}
+
+article .article-img figure img {
+    width: 100%;
+}
+
+article .article-phg {
+    width: 64.37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 0.7395em;
+}
+
+.article-phg-header h2 {
+    font-family: Poppins-normal;
+    font-weight: 700;
+    color: #0b86e4;
+    font-size: 0.75em;
+    letter-spacing: 1px;
+}
+
+.article-phg-intro p {
+    font-family: Roboto-Bold;
+    color: #333;
+    font-size: 1.25em;
+    letter-spacing: 0.10625em;
+}
+
+article .article-date .image img {
+    width: 50px;
+    height: 25px;
+}
+
+article .article-date .date-pgh p {
+    font-size: 0.7em;
+    color: #333;
+    font-family: Roboto;
+}
+
+.article-phg-author {
+    display: flex;
+    margin: 10px 0px;
+    align-items: center;
+}
+
+.article-phg-author p.author {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: .7em;
+    color: #9b9b9b;
+    margin: 0px 10px;
+}
+
+.article-phg-author img.read {
+    width: 20x;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.article-phg-author p.times-read {
+    font-family: Inconsolata;
+    font-weight: 400;
+    font-size: 0.875em;
+    color: #1595df;
+}
+
+.divider {
+    display: flex;
+}
+
+.div-date {
+    width: 9.77%;
+}
+
+.div-img {
+    width: 25.86%;
+    border-bottom: solid 1px black;
+}
+
+.div-content {
+    width: 64.37%;
+    border-bottom: solid 1px black;
+}
+
+.aside-article {
+    width: 92.44%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 20px auto;
+}
+
+.aside-img {
+    width: 100%;
+    height: 76.66%;
+    align-self: center;
+    margin-bottom: 0.625em;
+}
+
+.aside-img img {
+    height: 100%;
+}
+
+.aside-phg {
+    width: 100%;
+    height: 15%;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 1em;
+    line-height: 1.2;
+    letter-spacing: 0.1px;
+}
+
+.aside-author {
+    height: 8.33%;
+    display: flex;
+    margin-top: 5px;
+    align-items: baseline;
+}
+
+.aside-author-author {
+    font-family: Roboto-Bold;
+    font-weight: 900;
+    font-size: .8em;
+    color: #333;
+    margin-right: 5px;
+}
+
+.aside-author-date {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: .7em;
+    color: #9b9b9b;
+} */

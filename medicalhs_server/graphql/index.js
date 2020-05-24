@@ -1,14 +1,54 @@
-const { ApolloServer, gql } = require('apollo-server-azure-functions');
+const { ApolloServer, gql } = require("apollo-server-express");
+const mongoose = require("mongoose");
+const createHandler = require("azure-function-express").createHandler;
+const express = require("express");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 
-const mongoose = require ('mongoose');
 mongoose
-  .connect('mongodb://artspider:art750717@ds064748.mlab.com:64748/mhs', { useNewUrlParser: true })
+  .connect("mongodb://localhost/medialhs1", { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-const typeDefs =  require('./schema');
-const resolvers = require('./resolvers');
+const db = mongoose.connection;
+const typeDefs =  require("./schema");
+const resolvers =  require("./resolvers");
+const { configure } =  require("protobufjs");
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const app = express();
+app.disable("x-powered-by");
 
-exports.graphqlHandler = server.createHandler();
+app.use(
+  session({
+    name: "sid",
+    secret: "ssh!secret!",
+    store: new MongoStore({ mongooseConnection: db }),
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 2,
+      sameSite: true,
+      secure: process.env.NODE_ENV === "production"
+    }
+  })
+);
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  cors: false,
+  playground: configure.playground
+    ? false
+    : {
+        settings: {
+          "request.credentials": "include"
+        }
+      },
+  context: ({ req, res }) => ({
+    req,
+    res
+  })
+});
+//server.applyMiddleware({ app });
+
+module.exports = createHandler();
