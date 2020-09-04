@@ -2,107 +2,135 @@
 
 @import "tailwindcss/components";
 
-.main__body{
-    /* background-image: url("~/img/bg-main-subcon.jpg"); */
-    background-position: center;
-    background-color: #cccccc; /* Used if the image is unavailable */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+body {
+  min-height: 100vh;
+}
+
+.main__body {
+  /* background-image: url("~/img/bg-main-subcon.jpg"); */
+  background-position: center;
+  background-color: #cccccc; /* Used if the image is unavailable */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+header.sticky {
+  background: rgba(32, 31, 31, 0.733);
+}
+
+.logo.hidden {
+  visibility: hidden;
 }
 
 .footer {
-    background-color: #cccccc; /* Used if the image is unavailable */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
+  background-color: #cccccc; /* Used if the image is unavailable */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 }
 
 .btn {
-    cursor: pointer;
-    text-transform: uppercase;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .btn--primary {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 .btn--primary:hover {
-    background-color: #fdcb46;
-    color: black;
-    font-weight: 700;
+  background-color: #fdcb46;
+  color: black;
+  font-weight: 700;
 }
 
 .btn--secondary {
-    background-color: #fdcb46;
-    color: black;
+  background-color: #fdcb46;
+  color: black;
 }
 
 .btn--secondary:hover {
-    background-color: black;
-    color: white;
-    font-weight: 700;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+}
+
+.btn--close {
+  background-color: rgba(238, 49, 16, 0.794);
+  color: white;
+}
+
+.btn--close:hover {
+  background-color: rgba(247, 76, 76, 0.678);
+  color: white;
+  font-weight: 700;
 }
 
 .pasos--get-pro {
-    flex: 0 0 47%;
+  flex: 0 0 47%;
 }
 
 .btn--registro {
-    flex: 1 0 35%;
+  flex: 1 0 35%;
 }
 
-input[type=radio] {
-    visibility: hidden;
+input[type="radio"] {
+  visibility: hidden;
 }
 
 label.radio {
-    cursor: pointer;
-    text-indent: 25px;
-    overflow: visible;
-    display: inline-block;
-    position: relative;
-    margin-bottom: 15px;
+  cursor: pointer;
+  text-indent: 25px;
+  overflow: visible;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px;
 }
 
 label.radio:before {
-    background: #3a57af;
-    content:'';
-    position: absolute;
-    top:2px;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
+  background: #3a57af;
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
 }
 
 label.radio:after {
-    opacity: 0;
-    content: '';
-    position: absolute;
-    width: 1.0em;
-    height: 0.5em;
-    background: transparent;
-    top: 7px;
-    left: 4.5px;
-    border: 3px solid #ffffff;
-    border-top: none;
-    border-right: none;
+  opacity: 0;
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 0.5em;
+  background: transparent;
+  top: 7px;
+  left: 4.5px;
+  border: 3px solid #ffffff;
+  border-top: none;
+  border-right: none;
 
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
-input[type=radio]:checked + label:after {
-    opacity: 1;
+input[type="radio"]:checked + label:after {
+  opacity: 1;
 }
 
-hr{
-    color: #a9a9a9;
-    opacity: 0.3;
+hr {
+  color: #a9a9a9;
+  opacity: 0.3;
 }
 
+.profile--picture {
+  background-color: #cccccc; /* Used if the image is unavailable */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
 
 @import "tailwindcss/utilities";

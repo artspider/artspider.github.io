@@ -13,6 +13,33 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  #turn {
+    display: none;
+  }
+  #content {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  #turn {
+    display: block;
+  }
+  #content {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #turn {
+    display: none;
+  }
+  #content {
+    display: block;
+  }
+}
+
 /* Sections
    ========================================================================== */
 
@@ -86,7 +113,7 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -175,7 +202,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -185,7 +213,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -414,7 +443,9 @@ ul {
  */
 
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
   line-height: 1.5; /* 2 */
 }
 
@@ -479,15 +510,18 @@ textarea {
   resize: vertical;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input::-moz-placeholder,
+textarea::-moz-placeholder {
   color: #a0aec0;
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
   color: #a0aec0;
 }
 
-input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
   color: #a0aec0;
 }
 
@@ -554,7 +588,8 @@ pre,
 code,
 kbd,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
 }
 
 /**
@@ -618,12 +653,24 @@ video {
   }
 }
 
-.main__body{
+body {
+  min-height: 100vh;
+}
+
+.main__body {
   /* background-image: url("~/img/bg-main-subcon.jpg"); */
   background-position: center;
   background-color: #cccccc; /* Used if the image is unavailable */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+header.sticky {
+  background: rgba(32, 31, 31, 0.733);
+}
+
+.logo.hidden {
+  visibility: hidden;
 }
 
 .footer {
@@ -659,6 +706,17 @@ video {
   font-weight: 700;
 }
 
+.btn--close {
+  background-color: rgba(238, 49, 16, 0.794);
+  color: white;
+}
+
+.btn--close:hover {
+  background-color: rgba(247, 76, 76, 0.678);
+  color: white;
+  font-weight: 700;
+}
+
 .pasos--get-pro {
   flex: 0 0 47%;
 }
@@ -667,7 +725,7 @@ video {
   flex: 1 0 35%;
 }
 
-input[type=radio] {
+input[type="radio"] {
   visibility: hidden;
 }
 
@@ -682,9 +740,9 @@ label.radio {
 
 label.radio:before {
   background: #3a57af;
-  content:'';
+  content: "";
   position: absolute;
-  top:2px;
+  top: 2px;
   left: 0;
   width: 20px;
   height: 20px;
@@ -693,9 +751,9 @@ label.radio:before {
 
 label.radio:after {
   opacity: 0;
-  content: '';
+  content: "";
   position: absolute;
-  width: 1.0em;
+  width: 1em;
   height: 0.5em;
   background: transparent;
   top: 7px;
@@ -706,17 +764,19 @@ label.radio:after {
   transform: rotate(-45deg);
 }
 
-input[type=radio]:checked + label:after {
+input[type="radio"]:checked + label:after {
   opacity: 1;
 }
 
-hr{
+hr {
   color: #a9a9a9;
   opacity: 0.3;
 }
 
-.logo {
-  margin-left: 10%;
+.profile--picture {
+  background-color: #cccccc; /* Used if the image is unavailable */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 }
 
 .space-y-0 > :not(template) ~ :not(template) {
@@ -1891,8 +1951,8 @@ hr{
 
 .appearance-none {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .bg-fixed {
@@ -6318,7 +6378,9 @@ hr{
 }
 
 .font-sans {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .font-serif {
@@ -6326,7 +6388,8 @@ hr{
 }
 
 .font-mono {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
 }
 
 .font-hairline {
@@ -6566,7 +6629,7 @@ hr{
 }
 
 .leading-3 {
-  line-height: .75rem;
+  line-height: 0.75rem;
 }
 
 .leading-4 {
@@ -7875,72 +7938,72 @@ hr{
 
 .object-contain {
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .object-cover {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .object-fill {
   -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
 
 .object-none {
   -o-object-fit: none;
-     object-fit: none;
+  object-fit: none;
 }
 
 .object-scale-down {
   -o-object-fit: scale-down;
-     object-fit: scale-down;
+  object-fit: scale-down;
 }
 
 .object-bottom {
   -o-object-position: bottom;
-     object-position: bottom;
+  object-position: bottom;
 }
 
 .object-center {
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
 }
 
 .object-left {
   -o-object-position: left;
-     object-position: left;
+  object-position: left;
 }
 
 .object-left-bottom {
   -o-object-position: left bottom;
-     object-position: left bottom;
+  object-position: left bottom;
 }
 
 .object-left-top {
   -o-object-position: left top;
-     object-position: left top;
+  object-position: left top;
 }
 
 .object-right {
   -o-object-position: right;
-     object-position: right;
+  object-position: right;
 }
 
 .object-right-bottom {
   -o-object-position: right bottom;
-     object-position: right bottom;
+  object-position: right bottom;
 }
 
 .object-right-top {
   -o-object-position: right top;
-     object-position: right top;
+  object-position: right top;
 }
 
 .object-top {
   -o-object-position: top;
-     object-position: top;
+  object-position: top;
 }
 
 .opacity-0 {
@@ -8069,17 +8132,17 @@ hr{
 
 .overscroll-auto {
   -ms-scroll-chaining: chained;
-      overscroll-behavior: auto;
+  overscroll-behavior: auto;
 }
 
 .overscroll-contain {
   -ms-scroll-chaining: none;
-      overscroll-behavior: contain;
+  overscroll-behavior: contain;
 }
 
 .overscroll-none {
   -ms-scroll-chaining: none;
-      overscroll-behavior: none;
+  overscroll-behavior: none;
 }
 
 .overscroll-y-auto {
@@ -13632,15 +13695,18 @@ hr{
 }
 
 .shadow-md {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .shadow-xl {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .shadow-2xl {
@@ -13672,15 +13738,18 @@ hr{
 }
 
 .hover\:shadow-md:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .hover\:shadow-lg:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .hover\:shadow-xl:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .hover\:shadow-2xl:hover {
@@ -13712,15 +13781,18 @@ hr{
 }
 
 .focus\:shadow-md:focus {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .focus\:shadow-lg:focus {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .focus\:shadow-xl:focus {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .focus\:shadow-2xl:focus {
@@ -15691,30 +15763,30 @@ hr{
 
 .select-none {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .select-text {
   -webkit-user-select: text;
-     -moz-user-select: text;
-      -ms-user-select: text;
-          user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 .select-all {
   -webkit-user-select: all;
-     -moz-user-select: all;
-      -ms-user-select: all;
-          user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
 }
 
 .select-auto {
   -webkit-user-select: auto;
-     -moz-user-select: auto;
-      -ms-user-select: auto;
-          user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
 }
 
 .align-baseline {
@@ -16106,115 +16178,115 @@ hr{
 .col-gap-0 {
   grid-column-gap: 0;
   -moz-column-gap: 0;
-       column-gap: 0;
+  column-gap: 0;
 }
 
 .col-gap-1 {
   grid-column-gap: 0.25rem;
   -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
+  column-gap: 0.25rem;
 }
 
 .col-gap-2 {
   grid-column-gap: 0.5rem;
   -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+  column-gap: 0.5rem;
 }
 
 .col-gap-3 {
   grid-column-gap: 0.75rem;
   -moz-column-gap: 0.75rem;
-       column-gap: 0.75rem;
+  column-gap: 0.75rem;
 }
 
 .col-gap-4 {
   grid-column-gap: 1rem;
   -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
 }
 
 .col-gap-5 {
   grid-column-gap: 1.25rem;
   -moz-column-gap: 1.25rem;
-       column-gap: 1.25rem;
+  column-gap: 1.25rem;
 }
 
 .col-gap-6 {
   grid-column-gap: 1.5rem;
   -moz-column-gap: 1.5rem;
-       column-gap: 1.5rem;
+  column-gap: 1.5rem;
 }
 
 .col-gap-8 {
   grid-column-gap: 2rem;
   -moz-column-gap: 2rem;
-       column-gap: 2rem;
+  column-gap: 2rem;
 }
 
 .col-gap-10 {
   grid-column-gap: 2.5rem;
   -moz-column-gap: 2.5rem;
-       column-gap: 2.5rem;
+  column-gap: 2.5rem;
 }
 
 .col-gap-12 {
   grid-column-gap: 3rem;
   -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  column-gap: 3rem;
 }
 
 .col-gap-16 {
   grid-column-gap: 4rem;
   -moz-column-gap: 4rem;
-       column-gap: 4rem;
+  column-gap: 4rem;
 }
 
 .col-gap-20 {
   grid-column-gap: 5rem;
   -moz-column-gap: 5rem;
-       column-gap: 5rem;
+  column-gap: 5rem;
 }
 
 .col-gap-24 {
   grid-column-gap: 6rem;
   -moz-column-gap: 6rem;
-       column-gap: 6rem;
+  column-gap: 6rem;
 }
 
 .col-gap-32 {
   grid-column-gap: 8rem;
   -moz-column-gap: 8rem;
-       column-gap: 8rem;
+  column-gap: 8rem;
 }
 
 .col-gap-40 {
   grid-column-gap: 10rem;
   -moz-column-gap: 10rem;
-       column-gap: 10rem;
+  column-gap: 10rem;
 }
 
 .col-gap-48 {
   grid-column-gap: 12rem;
   -moz-column-gap: 12rem;
-       column-gap: 12rem;
+  column-gap: 12rem;
 }
 
 .col-gap-56 {
   grid-column-gap: 14rem;
   -moz-column-gap: 14rem;
-       column-gap: 14rem;
+  column-gap: 14rem;
 }
 
 .col-gap-64 {
   grid-column-gap: 16rem;
   -moz-column-gap: 16rem;
-       column-gap: 16rem;
+  column-gap: 16rem;
 }
 
 .col-gap-px {
   grid-column-gap: 1px;
   -moz-column-gap: 1px;
-       column-gap: 1px;
+  column-gap: 1px;
 }
 
 .row-gap-0 {
@@ -16672,7 +16744,10 @@ hr{
   --transform-skew-y: 0;
   --transform-scale-x: 1;
   --transform-scale-y: 1;
-  transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+  transform: translateX(var(--transform-translate-x))
+    translateY(var(--transform-translate-y)) rotate(var(--transform-rotate))
+    skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y))
+    scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
 }
 
 .transform-none {
@@ -16721,23 +16796,23 @@ hr{
 }
 
 .scale-50 {
-  --transform-scale-x: .5;
-  --transform-scale-y: .5;
+  --transform-scale-x: 0.5;
+  --transform-scale-y: 0.5;
 }
 
 .scale-75 {
-  --transform-scale-x: .75;
-  --transform-scale-y: .75;
+  --transform-scale-x: 0.75;
+  --transform-scale-y: 0.75;
 }
 
 .scale-90 {
-  --transform-scale-x: .9;
-  --transform-scale-y: .9;
+  --transform-scale-x: 0.9;
+  --transform-scale-y: 0.9;
 }
 
 .scale-95 {
-  --transform-scale-x: .95;
-  --transform-scale-y: .95;
+  --transform-scale-x: 0.95;
+  --transform-scale-y: 0.95;
 }
 
 .scale-100 {
@@ -16770,19 +16845,19 @@ hr{
 }
 
 .scale-x-50 {
-  --transform-scale-x: .5;
+  --transform-scale-x: 0.5;
 }
 
 .scale-x-75 {
-  --transform-scale-x: .75;
+  --transform-scale-x: 0.75;
 }
 
 .scale-x-90 {
-  --transform-scale-x: .9;
+  --transform-scale-x: 0.9;
 }
 
 .scale-x-95 {
-  --transform-scale-x: .95;
+  --transform-scale-x: 0.95;
 }
 
 .scale-x-100 {
@@ -16810,19 +16885,19 @@ hr{
 }
 
 .scale-y-50 {
-  --transform-scale-y: .5;
+  --transform-scale-y: 0.5;
 }
 
 .scale-y-75 {
-  --transform-scale-y: .75;
+  --transform-scale-y: 0.75;
 }
 
 .scale-y-90 {
-  --transform-scale-y: .9;
+  --transform-scale-y: 0.9;
 }
 
 .scale-y-95 {
-  --transform-scale-y: .95;
+  --transform-scale-y: 0.95;
 }
 
 .scale-y-100 {
@@ -16851,23 +16926,23 @@ hr{
 }
 
 .hover\:scale-50:hover {
-  --transform-scale-x: .5;
-  --transform-scale-y: .5;
+  --transform-scale-x: 0.5;
+  --transform-scale-y: 0.5;
 }
 
 .hover\:scale-75:hover {
-  --transform-scale-x: .75;
-  --transform-scale-y: .75;
+  --transform-scale-x: 0.75;
+  --transform-scale-y: 0.75;
 }
 
 .hover\:scale-90:hover {
-  --transform-scale-x: .9;
-  --transform-scale-y: .9;
+  --transform-scale-x: 0.9;
+  --transform-scale-y: 0.9;
 }
 
 .hover\:scale-95:hover {
-  --transform-scale-x: .95;
-  --transform-scale-y: .95;
+  --transform-scale-x: 0.95;
+  --transform-scale-y: 0.95;
 }
 
 .hover\:scale-100:hover {
@@ -16900,19 +16975,19 @@ hr{
 }
 
 .hover\:scale-x-50:hover {
-  --transform-scale-x: .5;
+  --transform-scale-x: 0.5;
 }
 
 .hover\:scale-x-75:hover {
-  --transform-scale-x: .75;
+  --transform-scale-x: 0.75;
 }
 
 .hover\:scale-x-90:hover {
-  --transform-scale-x: .9;
+  --transform-scale-x: 0.9;
 }
 
 .hover\:scale-x-95:hover {
-  --transform-scale-x: .95;
+  --transform-scale-x: 0.95;
 }
 
 .hover\:scale-x-100:hover {
@@ -16940,19 +17015,19 @@ hr{
 }
 
 .hover\:scale-y-50:hover {
-  --transform-scale-y: .5;
+  --transform-scale-y: 0.5;
 }
 
 .hover\:scale-y-75:hover {
-  --transform-scale-y: .75;
+  --transform-scale-y: 0.75;
 }
 
 .hover\:scale-y-90:hover {
-  --transform-scale-y: .9;
+  --transform-scale-y: 0.9;
 }
 
 .hover\:scale-y-95:hover {
-  --transform-scale-y: .95;
+  --transform-scale-y: 0.95;
 }
 
 .hover\:scale-y-100:hover {
@@ -16981,23 +17056,23 @@ hr{
 }
 
 .focus\:scale-50:focus {
-  --transform-scale-x: .5;
-  --transform-scale-y: .5;
+  --transform-scale-x: 0.5;
+  --transform-scale-y: 0.5;
 }
 
 .focus\:scale-75:focus {
-  --transform-scale-x: .75;
-  --transform-scale-y: .75;
+  --transform-scale-x: 0.75;
+  --transform-scale-y: 0.75;
 }
 
 .focus\:scale-90:focus {
-  --transform-scale-x: .9;
-  --transform-scale-y: .9;
+  --transform-scale-x: 0.9;
+  --transform-scale-y: 0.9;
 }
 
 .focus\:scale-95:focus {
-  --transform-scale-x: .95;
-  --transform-scale-y: .95;
+  --transform-scale-x: 0.95;
+  --transform-scale-y: 0.95;
 }
 
 .focus\:scale-100:focus {
@@ -17030,19 +17105,19 @@ hr{
 }
 
 .focus\:scale-x-50:focus {
-  --transform-scale-x: .5;
+  --transform-scale-x: 0.5;
 }
 
 .focus\:scale-x-75:focus {
-  --transform-scale-x: .75;
+  --transform-scale-x: 0.75;
 }
 
 .focus\:scale-x-90:focus {
-  --transform-scale-x: .9;
+  --transform-scale-x: 0.9;
 }
 
 .focus\:scale-x-95:focus {
-  --transform-scale-x: .95;
+  --transform-scale-x: 0.95;
 }
 
 .focus\:scale-x-100:focus {
@@ -17070,19 +17145,19 @@ hr{
 }
 
 .focus\:scale-y-50:focus {
-  --transform-scale-y: .5;
+  --transform-scale-y: 0.5;
 }
 
 .focus\:scale-y-75:focus {
-  --transform-scale-y: .75;
+  --transform-scale-y: 0.75;
 }
 
 .focus\:scale-y-90:focus {
-  --transform-scale-y: .9;
+  --transform-scale-y: 0.9;
 }
 
 .focus\:scale-y-95:focus {
-  --transform-scale-y: .95;
+  --transform-scale-y: 0.95;
 }
 
 .focus\:scale-y-100:focus {
@@ -18350,7 +18425,8 @@ hr{
 }
 
 .transition {
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
 }
 
 .transition-colors {
@@ -18475,7 +18551,8 @@ hr{
     opacity: 1;
   }
 
-  75%, 100% {
+  75%,
+  100% {
     transform: scale(2);
     opacity: 0;
   }
@@ -18487,83 +18564,88 @@ hr{
     opacity: 1;
   }
 
-  75%, 100% {
+  75%,
+  100% {
     transform: scale(2);
     opacity: 0;
   }
 }
 
 @-webkit-keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
 
   50% {
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
 
   50% {
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 
 @-webkit-keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
+    -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
 
   50% {
     transform: translateY(0);
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
+    -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
 
   50% {
     transform: translateY(0);
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
 .animate-none {
   -webkit-animation: none;
-          animation: none;
+  animation: none;
 }
 
 .animate-spin {
   -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
 .animate-ping {
   -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .animate-pulse {
   -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .animate-bounce {
   -webkit-animation: bounce 1s infinite;
-          animation: bounce 1s infinite;
+  animation: bounce 1s infinite;
 }
 
 @media (min-width: 640px) {
@@ -19767,8 +19849,8 @@ hr{
 
   .sm\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   .sm\:bg-fixed {
@@ -24194,7 +24276,10 @@ hr{
   }
 
   .sm\:font-sans {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
   }
 
   .sm\:font-serif {
@@ -24202,7 +24287,8 @@ hr{
   }
 
   .sm\:font-mono {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      monospace;
   }
 
   .sm\:font-hairline {
@@ -24442,7 +24528,7 @@ hr{
   }
 
   .sm\:leading-3 {
-    line-height: .75rem;
+    line-height: 0.75rem;
   }
 
   .sm\:leading-4 {
@@ -25751,72 +25837,72 @@ hr{
 
   .sm\:object-contain {
     -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
 
   .sm\:object-cover {
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 
   .sm\:object-fill {
     -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 
   .sm\:object-none {
     -o-object-fit: none;
-       object-fit: none;
+    object-fit: none;
   }
 
   .sm\:object-scale-down {
     -o-object-fit: scale-down;
-       object-fit: scale-down;
+    object-fit: scale-down;
   }
 
   .sm\:object-bottom {
     -o-object-position: bottom;
-       object-position: bottom;
+    object-position: bottom;
   }
 
   .sm\:object-center {
     -o-object-position: center;
-       object-position: center;
+    object-position: center;
   }
 
   .sm\:object-left {
     -o-object-position: left;
-       object-position: left;
+    object-position: left;
   }
 
   .sm\:object-left-bottom {
     -o-object-position: left bottom;
-       object-position: left bottom;
+    object-position: left bottom;
   }
 
   .sm\:object-left-top {
     -o-object-position: left top;
-       object-position: left top;
+    object-position: left top;
   }
 
   .sm\:object-right {
     -o-object-position: right;
-       object-position: right;
+    object-position: right;
   }
 
   .sm\:object-right-bottom {
     -o-object-position: right bottom;
-       object-position: right bottom;
+    object-position: right bottom;
   }
 
   .sm\:object-right-top {
     -o-object-position: right top;
-       object-position: right top;
+    object-position: right top;
   }
 
   .sm\:object-top {
     -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
 
   .sm\:opacity-0 {
@@ -25945,17 +26031,17 @@ hr{
 
   .sm\:overscroll-auto {
     -ms-scroll-chaining: chained;
-        overscroll-behavior: auto;
+    overscroll-behavior: auto;
   }
 
   .sm\:overscroll-contain {
     -ms-scroll-chaining: none;
-        overscroll-behavior: contain;
+    overscroll-behavior: contain;
   }
 
   .sm\:overscroll-none {
     -ms-scroll-chaining: none;
-        overscroll-behavior: none;
+    overscroll-behavior: none;
   }
 
   .sm\:overscroll-y-auto {
@@ -31508,15 +31594,18 @@ hr{
   }
 
   .sm\:shadow-md {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .sm\:shadow-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .sm\:shadow-xl {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .sm\:shadow-2xl {
@@ -31548,15 +31637,18 @@ hr{
   }
 
   .sm\:hover\:shadow-md:hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .sm\:hover\:shadow-lg:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .sm\:hover\:shadow-xl:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .sm\:hover\:shadow-2xl:hover {
@@ -31588,15 +31680,18 @@ hr{
   }
 
   .sm\:focus\:shadow-md:focus {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .sm\:focus\:shadow-lg:focus {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .sm\:focus\:shadow-xl:focus {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .sm\:focus\:shadow-2xl:focus {
@@ -33567,30 +33662,30 @@ hr{
 
   .sm\:select-none {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .sm\:select-text {
     -webkit-user-select: text;
-       -moz-user-select: text;
-        -ms-user-select: text;
-            user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
   }
 
   .sm\:select-all {
     -webkit-user-select: all;
-       -moz-user-select: all;
-        -ms-user-select: all;
-            user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
   }
 
   .sm\:select-auto {
     -webkit-user-select: auto;
-       -moz-user-select: auto;
-        -ms-user-select: auto;
-            user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
   }
 
   .sm\:align-baseline {
@@ -33982,115 +34077,115 @@ hr{
   .sm\:col-gap-0 {
     grid-column-gap: 0;
     -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
   }
 
   .sm\:col-gap-1 {
     grid-column-gap: 0.25rem;
     -moz-column-gap: 0.25rem;
-         column-gap: 0.25rem;
+    column-gap: 0.25rem;
   }
 
   .sm\:col-gap-2 {
     grid-column-gap: 0.5rem;
     -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
+    column-gap: 0.5rem;
   }
 
   .sm\:col-gap-3 {
     grid-column-gap: 0.75rem;
     -moz-column-gap: 0.75rem;
-         column-gap: 0.75rem;
+    column-gap: 0.75rem;
   }
 
   .sm\:col-gap-4 {
     grid-column-gap: 1rem;
     -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    column-gap: 1rem;
   }
 
   .sm\:col-gap-5 {
     grid-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
-         column-gap: 1.25rem;
+    column-gap: 1.25rem;
   }
 
   .sm\:col-gap-6 {
     grid-column-gap: 1.5rem;
     -moz-column-gap: 1.5rem;
-         column-gap: 1.5rem;
+    column-gap: 1.5rem;
   }
 
   .sm\:col-gap-8 {
     grid-column-gap: 2rem;
     -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-gap: 2rem;
   }
 
   .sm\:col-gap-10 {
     grid-column-gap: 2.5rem;
     -moz-column-gap: 2.5rem;
-         column-gap: 2.5rem;
+    column-gap: 2.5rem;
   }
 
   .sm\:col-gap-12 {
     grid-column-gap: 3rem;
     -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    column-gap: 3rem;
   }
 
   .sm\:col-gap-16 {
     grid-column-gap: 4rem;
     -moz-column-gap: 4rem;
-         column-gap: 4rem;
+    column-gap: 4rem;
   }
 
   .sm\:col-gap-20 {
     grid-column-gap: 5rem;
     -moz-column-gap: 5rem;
-         column-gap: 5rem;
+    column-gap: 5rem;
   }
 
   .sm\:col-gap-24 {
     grid-column-gap: 6rem;
     -moz-column-gap: 6rem;
-         column-gap: 6rem;
+    column-gap: 6rem;
   }
 
   .sm\:col-gap-32 {
     grid-column-gap: 8rem;
     -moz-column-gap: 8rem;
-         column-gap: 8rem;
+    column-gap: 8rem;
   }
 
   .sm\:col-gap-40 {
     grid-column-gap: 10rem;
     -moz-column-gap: 10rem;
-         column-gap: 10rem;
+    column-gap: 10rem;
   }
 
   .sm\:col-gap-48 {
     grid-column-gap: 12rem;
     -moz-column-gap: 12rem;
-         column-gap: 12rem;
+    column-gap: 12rem;
   }
 
   .sm\:col-gap-56 {
     grid-column-gap: 14rem;
     -moz-column-gap: 14rem;
-         column-gap: 14rem;
+    column-gap: 14rem;
   }
 
   .sm\:col-gap-64 {
     grid-column-gap: 16rem;
     -moz-column-gap: 16rem;
-         column-gap: 16rem;
+    column-gap: 16rem;
   }
 
   .sm\:col-gap-px {
     grid-column-gap: 1px;
     -moz-column-gap: 1px;
-         column-gap: 1px;
+    column-gap: 1px;
   }
 
   .sm\:row-gap-0 {
@@ -34548,7 +34643,10 @@ hr{
     --transform-skew-y: 0;
     --transform-scale-x: 1;
     --transform-scale-y: 1;
-    transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+    transform: translateX(var(--transform-translate-x))
+      translateY(var(--transform-translate-y)) rotate(var(--transform-rotate))
+      skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y))
+      scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
   }
 
   .sm\:transform-none {
@@ -34597,23 +34695,23 @@ hr{
   }
 
   .sm\:scale-50 {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .sm\:scale-75 {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .sm\:scale-90 {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .sm\:scale-95 {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .sm\:scale-100 {
@@ -34646,19 +34744,19 @@ hr{
   }
 
   .sm\:scale-x-50 {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .sm\:scale-x-75 {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .sm\:scale-x-90 {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .sm\:scale-x-95 {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .sm\:scale-x-100 {
@@ -34686,19 +34784,19 @@ hr{
   }
 
   .sm\:scale-y-50 {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .sm\:scale-y-75 {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .sm\:scale-y-90 {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .sm\:scale-y-95 {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .sm\:scale-y-100 {
@@ -34727,23 +34825,23 @@ hr{
   }
 
   .sm\:hover\:scale-50:hover {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .sm\:hover\:scale-75:hover {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .sm\:hover\:scale-90:hover {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .sm\:hover\:scale-95:hover {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .sm\:hover\:scale-100:hover {
@@ -34776,19 +34874,19 @@ hr{
   }
 
   .sm\:hover\:scale-x-50:hover {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .sm\:hover\:scale-x-75:hover {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .sm\:hover\:scale-x-90:hover {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .sm\:hover\:scale-x-95:hover {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .sm\:hover\:scale-x-100:hover {
@@ -34816,19 +34914,19 @@ hr{
   }
 
   .sm\:hover\:scale-y-50:hover {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .sm\:hover\:scale-y-75:hover {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .sm\:hover\:scale-y-90:hover {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .sm\:hover\:scale-y-95:hover {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .sm\:hover\:scale-y-100:hover {
@@ -34857,23 +34955,23 @@ hr{
   }
 
   .sm\:focus\:scale-50:focus {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .sm\:focus\:scale-75:focus {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .sm\:focus\:scale-90:focus {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .sm\:focus\:scale-95:focus {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .sm\:focus\:scale-100:focus {
@@ -34906,19 +35004,19 @@ hr{
   }
 
   .sm\:focus\:scale-x-50:focus {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .sm\:focus\:scale-x-75:focus {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .sm\:focus\:scale-x-90:focus {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .sm\:focus\:scale-x-95:focus {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .sm\:focus\:scale-x-100:focus {
@@ -34946,19 +35044,19 @@ hr{
   }
 
   .sm\:focus\:scale-y-50:focus {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .sm\:focus\:scale-y-75:focus {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .sm\:focus\:scale-y-90:focus {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .sm\:focus\:scale-y-95:focus {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .sm\:focus\:scale-y-100:focus {
@@ -36226,7 +36324,8 @@ hr{
   }
 
   .sm\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-property: background-color, border-color, color, fill, stroke,
+      opacity, box-shadow, transform;
   }
 
   .sm\:transition-colors {
@@ -36327,27 +36426,27 @@ hr{
 
   .sm\:animate-none {
     -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
 
   .sm\:animate-spin {
     -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
   }
 
   .sm\:animate-ping {
     -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   .sm\:animate-pulse {
     -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .sm\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
-            animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
   }
 }
 
@@ -37552,8 +37651,8 @@ hr{
 
   .md\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   .md\:bg-fixed {
@@ -41979,7 +42078,10 @@ hr{
   }
 
   .md\:font-sans {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
   }
 
   .md\:font-serif {
@@ -41987,7 +42089,8 @@ hr{
   }
 
   .md\:font-mono {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      monospace;
   }
 
   .md\:font-hairline {
@@ -42227,7 +42330,7 @@ hr{
   }
 
   .md\:leading-3 {
-    line-height: .75rem;
+    line-height: 0.75rem;
   }
 
   .md\:leading-4 {
@@ -43536,72 +43639,72 @@ hr{
 
   .md\:object-contain {
     -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
 
   .md\:object-cover {
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 
   .md\:object-fill {
     -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 
   .md\:object-none {
     -o-object-fit: none;
-       object-fit: none;
+    object-fit: none;
   }
 
   .md\:object-scale-down {
     -o-object-fit: scale-down;
-       object-fit: scale-down;
+    object-fit: scale-down;
   }
 
   .md\:object-bottom {
     -o-object-position: bottom;
-       object-position: bottom;
+    object-position: bottom;
   }
 
   .md\:object-center {
     -o-object-position: center;
-       object-position: center;
+    object-position: center;
   }
 
   .md\:object-left {
     -o-object-position: left;
-       object-position: left;
+    object-position: left;
   }
 
   .md\:object-left-bottom {
     -o-object-position: left bottom;
-       object-position: left bottom;
+    object-position: left bottom;
   }
 
   .md\:object-left-top {
     -o-object-position: left top;
-       object-position: left top;
+    object-position: left top;
   }
 
   .md\:object-right {
     -o-object-position: right;
-       object-position: right;
+    object-position: right;
   }
 
   .md\:object-right-bottom {
     -o-object-position: right bottom;
-       object-position: right bottom;
+    object-position: right bottom;
   }
 
   .md\:object-right-top {
     -o-object-position: right top;
-       object-position: right top;
+    object-position: right top;
   }
 
   .md\:object-top {
     -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
 
   .md\:opacity-0 {
@@ -43730,17 +43833,17 @@ hr{
 
   .md\:overscroll-auto {
     -ms-scroll-chaining: chained;
-        overscroll-behavior: auto;
+    overscroll-behavior: auto;
   }
 
   .md\:overscroll-contain {
     -ms-scroll-chaining: none;
-        overscroll-behavior: contain;
+    overscroll-behavior: contain;
   }
 
   .md\:overscroll-none {
     -ms-scroll-chaining: none;
-        overscroll-behavior: none;
+    overscroll-behavior: none;
   }
 
   .md\:overscroll-y-auto {
@@ -49293,15 +49396,18 @@ hr{
   }
 
   .md\:shadow-md {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .md\:shadow-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .md\:shadow-xl {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .md\:shadow-2xl {
@@ -49333,15 +49439,18 @@ hr{
   }
 
   .md\:hover\:shadow-md:hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .md\:hover\:shadow-lg:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .md\:hover\:shadow-xl:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .md\:hover\:shadow-2xl:hover {
@@ -49373,15 +49482,18 @@ hr{
   }
 
   .md\:focus\:shadow-md:focus {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .md\:focus\:shadow-lg:focus {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .md\:focus\:shadow-xl:focus {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .md\:focus\:shadow-2xl:focus {
@@ -51352,30 +51464,30 @@ hr{
 
   .md\:select-none {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .md\:select-text {
     -webkit-user-select: text;
-       -moz-user-select: text;
-        -ms-user-select: text;
-            user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
   }
 
   .md\:select-all {
     -webkit-user-select: all;
-       -moz-user-select: all;
-        -ms-user-select: all;
-            user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
   }
 
   .md\:select-auto {
     -webkit-user-select: auto;
-       -moz-user-select: auto;
-        -ms-user-select: auto;
-            user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
   }
 
   .md\:align-baseline {
@@ -51767,115 +51879,115 @@ hr{
   .md\:col-gap-0 {
     grid-column-gap: 0;
     -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
   }
 
   .md\:col-gap-1 {
     grid-column-gap: 0.25rem;
     -moz-column-gap: 0.25rem;
-         column-gap: 0.25rem;
+    column-gap: 0.25rem;
   }
 
   .md\:col-gap-2 {
     grid-column-gap: 0.5rem;
     -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
+    column-gap: 0.5rem;
   }
 
   .md\:col-gap-3 {
     grid-column-gap: 0.75rem;
     -moz-column-gap: 0.75rem;
-         column-gap: 0.75rem;
+    column-gap: 0.75rem;
   }
 
   .md\:col-gap-4 {
     grid-column-gap: 1rem;
     -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    column-gap: 1rem;
   }
 
   .md\:col-gap-5 {
     grid-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
-         column-gap: 1.25rem;
+    column-gap: 1.25rem;
   }
 
   .md\:col-gap-6 {
     grid-column-gap: 1.5rem;
     -moz-column-gap: 1.5rem;
-         column-gap: 1.5rem;
+    column-gap: 1.5rem;
   }
 
   .md\:col-gap-8 {
     grid-column-gap: 2rem;
     -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-gap: 2rem;
   }
 
   .md\:col-gap-10 {
     grid-column-gap: 2.5rem;
     -moz-column-gap: 2.5rem;
-         column-gap: 2.5rem;
+    column-gap: 2.5rem;
   }
 
   .md\:col-gap-12 {
     grid-column-gap: 3rem;
     -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    column-gap: 3rem;
   }
 
   .md\:col-gap-16 {
     grid-column-gap: 4rem;
     -moz-column-gap: 4rem;
-         column-gap: 4rem;
+    column-gap: 4rem;
   }
 
   .md\:col-gap-20 {
     grid-column-gap: 5rem;
     -moz-column-gap: 5rem;
-         column-gap: 5rem;
+    column-gap: 5rem;
   }
 
   .md\:col-gap-24 {
     grid-column-gap: 6rem;
     -moz-column-gap: 6rem;
-         column-gap: 6rem;
+    column-gap: 6rem;
   }
 
   .md\:col-gap-32 {
     grid-column-gap: 8rem;
     -moz-column-gap: 8rem;
-         column-gap: 8rem;
+    column-gap: 8rem;
   }
 
   .md\:col-gap-40 {
     grid-column-gap: 10rem;
     -moz-column-gap: 10rem;
-         column-gap: 10rem;
+    column-gap: 10rem;
   }
 
   .md\:col-gap-48 {
     grid-column-gap: 12rem;
     -moz-column-gap: 12rem;
-         column-gap: 12rem;
+    column-gap: 12rem;
   }
 
   .md\:col-gap-56 {
     grid-column-gap: 14rem;
     -moz-column-gap: 14rem;
-         column-gap: 14rem;
+    column-gap: 14rem;
   }
 
   .md\:col-gap-64 {
     grid-column-gap: 16rem;
     -moz-column-gap: 16rem;
-         column-gap: 16rem;
+    column-gap: 16rem;
   }
 
   .md\:col-gap-px {
     grid-column-gap: 1px;
     -moz-column-gap: 1px;
-         column-gap: 1px;
+    column-gap: 1px;
   }
 
   .md\:row-gap-0 {
@@ -52333,7 +52445,10 @@ hr{
     --transform-skew-y: 0;
     --transform-scale-x: 1;
     --transform-scale-y: 1;
-    transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+    transform: translateX(var(--transform-translate-x))
+      translateY(var(--transform-translate-y)) rotate(var(--transform-rotate))
+      skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y))
+      scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
   }
 
   .md\:transform-none {
@@ -52382,23 +52497,23 @@ hr{
   }
 
   .md\:scale-50 {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .md\:scale-75 {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .md\:scale-90 {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .md\:scale-95 {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .md\:scale-100 {
@@ -52431,19 +52546,19 @@ hr{
   }
 
   .md\:scale-x-50 {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .md\:scale-x-75 {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .md\:scale-x-90 {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .md\:scale-x-95 {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .md\:scale-x-100 {
@@ -52471,19 +52586,19 @@ hr{
   }
 
   .md\:scale-y-50 {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .md\:scale-y-75 {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .md\:scale-y-90 {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .md\:scale-y-95 {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .md\:scale-y-100 {
@@ -52512,23 +52627,23 @@ hr{
   }
 
   .md\:hover\:scale-50:hover {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .md\:hover\:scale-75:hover {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .md\:hover\:scale-90:hover {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .md\:hover\:scale-95:hover {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .md\:hover\:scale-100:hover {
@@ -52561,19 +52676,19 @@ hr{
   }
 
   .md\:hover\:scale-x-50:hover {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .md\:hover\:scale-x-75:hover {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .md\:hover\:scale-x-90:hover {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .md\:hover\:scale-x-95:hover {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .md\:hover\:scale-x-100:hover {
@@ -52601,19 +52716,19 @@ hr{
   }
 
   .md\:hover\:scale-y-50:hover {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .md\:hover\:scale-y-75:hover {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .md\:hover\:scale-y-90:hover {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .md\:hover\:scale-y-95:hover {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .md\:hover\:scale-y-100:hover {
@@ -52642,23 +52757,23 @@ hr{
   }
 
   .md\:focus\:scale-50:focus {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .md\:focus\:scale-75:focus {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .md\:focus\:scale-90:focus {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .md\:focus\:scale-95:focus {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .md\:focus\:scale-100:focus {
@@ -52691,19 +52806,19 @@ hr{
   }
 
   .md\:focus\:scale-x-50:focus {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .md\:focus\:scale-x-75:focus {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .md\:focus\:scale-x-90:focus {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .md\:focus\:scale-x-95:focus {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .md\:focus\:scale-x-100:focus {
@@ -52731,19 +52846,19 @@ hr{
   }
 
   .md\:focus\:scale-y-50:focus {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .md\:focus\:scale-y-75:focus {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .md\:focus\:scale-y-90:focus {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .md\:focus\:scale-y-95:focus {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .md\:focus\:scale-y-100:focus {
@@ -54011,7 +54126,8 @@ hr{
   }
 
   .md\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-property: background-color, border-color, color, fill, stroke,
+      opacity, box-shadow, transform;
   }
 
   .md\:transition-colors {
@@ -54112,27 +54228,27 @@ hr{
 
   .md\:animate-none {
     -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
 
   .md\:animate-spin {
     -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
   }
 
   .md\:animate-ping {
     -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   .md\:animate-pulse {
     -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .md\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
-            animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
   }
 }
 
@@ -55337,8 +55453,8 @@ hr{
 
   .lg\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   .lg\:bg-fixed {
@@ -59764,7 +59880,10 @@ hr{
   }
 
   .lg\:font-sans {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
   }
 
   .lg\:font-serif {
@@ -59772,7 +59891,8 @@ hr{
   }
 
   .lg\:font-mono {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      monospace;
   }
 
   .lg\:font-hairline {
@@ -60012,7 +60132,7 @@ hr{
   }
 
   .lg\:leading-3 {
-    line-height: .75rem;
+    line-height: 0.75rem;
   }
 
   .lg\:leading-4 {
@@ -61321,72 +61441,72 @@ hr{
 
   .lg\:object-contain {
     -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
 
   .lg\:object-cover {
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 
   .lg\:object-fill {
     -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 
   .lg\:object-none {
     -o-object-fit: none;
-       object-fit: none;
+    object-fit: none;
   }
 
   .lg\:object-scale-down {
     -o-object-fit: scale-down;
-       object-fit: scale-down;
+    object-fit: scale-down;
   }
 
   .lg\:object-bottom {
     -o-object-position: bottom;
-       object-position: bottom;
+    object-position: bottom;
   }
 
   .lg\:object-center {
     -o-object-position: center;
-       object-position: center;
+    object-position: center;
   }
 
   .lg\:object-left {
     -o-object-position: left;
-       object-position: left;
+    object-position: left;
   }
 
   .lg\:object-left-bottom {
     -o-object-position: left bottom;
-       object-position: left bottom;
+    object-position: left bottom;
   }
 
   .lg\:object-left-top {
     -o-object-position: left top;
-       object-position: left top;
+    object-position: left top;
   }
 
   .lg\:object-right {
     -o-object-position: right;
-       object-position: right;
+    object-position: right;
   }
 
   .lg\:object-right-bottom {
     -o-object-position: right bottom;
-       object-position: right bottom;
+    object-position: right bottom;
   }
 
   .lg\:object-right-top {
     -o-object-position: right top;
-       object-position: right top;
+    object-position: right top;
   }
 
   .lg\:object-top {
     -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
 
   .lg\:opacity-0 {
@@ -61515,17 +61635,17 @@ hr{
 
   .lg\:overscroll-auto {
     -ms-scroll-chaining: chained;
-        overscroll-behavior: auto;
+    overscroll-behavior: auto;
   }
 
   .lg\:overscroll-contain {
     -ms-scroll-chaining: none;
-        overscroll-behavior: contain;
+    overscroll-behavior: contain;
   }
 
   .lg\:overscroll-none {
     -ms-scroll-chaining: none;
-        overscroll-behavior: none;
+    overscroll-behavior: none;
   }
 
   .lg\:overscroll-y-auto {
@@ -67078,15 +67198,18 @@ hr{
   }
 
   .lg\:shadow-md {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .lg\:shadow-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .lg\:shadow-xl {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .lg\:shadow-2xl {
@@ -67118,15 +67241,18 @@ hr{
   }
 
   .lg\:hover\:shadow-md:hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .lg\:hover\:shadow-lg:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .lg\:hover\:shadow-xl:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .lg\:hover\:shadow-2xl:hover {
@@ -67158,15 +67284,18 @@ hr{
   }
 
   .lg\:focus\:shadow-md:focus {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .lg\:focus\:shadow-lg:focus {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .lg\:focus\:shadow-xl:focus {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .lg\:focus\:shadow-2xl:focus {
@@ -69137,30 +69266,30 @@ hr{
 
   .lg\:select-none {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .lg\:select-text {
     -webkit-user-select: text;
-       -moz-user-select: text;
-        -ms-user-select: text;
-            user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
   }
 
   .lg\:select-all {
     -webkit-user-select: all;
-       -moz-user-select: all;
-        -ms-user-select: all;
-            user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
   }
 
   .lg\:select-auto {
     -webkit-user-select: auto;
-       -moz-user-select: auto;
-        -ms-user-select: auto;
-            user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
   }
 
   .lg\:align-baseline {
@@ -69552,115 +69681,115 @@ hr{
   .lg\:col-gap-0 {
     grid-column-gap: 0;
     -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
   }
 
   .lg\:col-gap-1 {
     grid-column-gap: 0.25rem;
     -moz-column-gap: 0.25rem;
-         column-gap: 0.25rem;
+    column-gap: 0.25rem;
   }
 
   .lg\:col-gap-2 {
     grid-column-gap: 0.5rem;
     -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
+    column-gap: 0.5rem;
   }
 
   .lg\:col-gap-3 {
     grid-column-gap: 0.75rem;
     -moz-column-gap: 0.75rem;
-         column-gap: 0.75rem;
+    column-gap: 0.75rem;
   }
 
   .lg\:col-gap-4 {
     grid-column-gap: 1rem;
     -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    column-gap: 1rem;
   }
 
   .lg\:col-gap-5 {
     grid-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
-         column-gap: 1.25rem;
+    column-gap: 1.25rem;
   }
 
   .lg\:col-gap-6 {
     grid-column-gap: 1.5rem;
     -moz-column-gap: 1.5rem;
-         column-gap: 1.5rem;
+    column-gap: 1.5rem;
   }
 
   .lg\:col-gap-8 {
     grid-column-gap: 2rem;
     -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-gap: 2rem;
   }
 
   .lg\:col-gap-10 {
     grid-column-gap: 2.5rem;
     -moz-column-gap: 2.5rem;
-         column-gap: 2.5rem;
+    column-gap: 2.5rem;
   }
 
   .lg\:col-gap-12 {
     grid-column-gap: 3rem;
     -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    column-gap: 3rem;
   }
 
   .lg\:col-gap-16 {
     grid-column-gap: 4rem;
     -moz-column-gap: 4rem;
-         column-gap: 4rem;
+    column-gap: 4rem;
   }
 
   .lg\:col-gap-20 {
     grid-column-gap: 5rem;
     -moz-column-gap: 5rem;
-         column-gap: 5rem;
+    column-gap: 5rem;
   }
 
   .lg\:col-gap-24 {
     grid-column-gap: 6rem;
     -moz-column-gap: 6rem;
-         column-gap: 6rem;
+    column-gap: 6rem;
   }
 
   .lg\:col-gap-32 {
     grid-column-gap: 8rem;
     -moz-column-gap: 8rem;
-         column-gap: 8rem;
+    column-gap: 8rem;
   }
 
   .lg\:col-gap-40 {
     grid-column-gap: 10rem;
     -moz-column-gap: 10rem;
-         column-gap: 10rem;
+    column-gap: 10rem;
   }
 
   .lg\:col-gap-48 {
     grid-column-gap: 12rem;
     -moz-column-gap: 12rem;
-         column-gap: 12rem;
+    column-gap: 12rem;
   }
 
   .lg\:col-gap-56 {
     grid-column-gap: 14rem;
     -moz-column-gap: 14rem;
-         column-gap: 14rem;
+    column-gap: 14rem;
   }
 
   .lg\:col-gap-64 {
     grid-column-gap: 16rem;
     -moz-column-gap: 16rem;
-         column-gap: 16rem;
+    column-gap: 16rem;
   }
 
   .lg\:col-gap-px {
     grid-column-gap: 1px;
     -moz-column-gap: 1px;
-         column-gap: 1px;
+    column-gap: 1px;
   }
 
   .lg\:row-gap-0 {
@@ -70118,7 +70247,10 @@ hr{
     --transform-skew-y: 0;
     --transform-scale-x: 1;
     --transform-scale-y: 1;
-    transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+    transform: translateX(var(--transform-translate-x))
+      translateY(var(--transform-translate-y)) rotate(var(--transform-rotate))
+      skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y))
+      scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
   }
 
   .lg\:transform-none {
@@ -70167,23 +70299,23 @@ hr{
   }
 
   .lg\:scale-50 {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .lg\:scale-75 {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .lg\:scale-90 {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .lg\:scale-95 {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .lg\:scale-100 {
@@ -70216,19 +70348,19 @@ hr{
   }
 
   .lg\:scale-x-50 {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .lg\:scale-x-75 {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .lg\:scale-x-90 {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .lg\:scale-x-95 {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .lg\:scale-x-100 {
@@ -70256,19 +70388,19 @@ hr{
   }
 
   .lg\:scale-y-50 {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .lg\:scale-y-75 {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .lg\:scale-y-90 {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .lg\:scale-y-95 {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .lg\:scale-y-100 {
@@ -70297,23 +70429,23 @@ hr{
   }
 
   .lg\:hover\:scale-50:hover {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .lg\:hover\:scale-75:hover {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .lg\:hover\:scale-90:hover {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .lg\:hover\:scale-95:hover {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .lg\:hover\:scale-100:hover {
@@ -70346,19 +70478,19 @@ hr{
   }
 
   .lg\:hover\:scale-x-50:hover {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .lg\:hover\:scale-x-75:hover {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .lg\:hover\:scale-x-90:hover {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .lg\:hover\:scale-x-95:hover {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .lg\:hover\:scale-x-100:hover {
@@ -70386,19 +70518,19 @@ hr{
   }
 
   .lg\:hover\:scale-y-50:hover {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .lg\:hover\:scale-y-75:hover {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .lg\:hover\:scale-y-90:hover {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .lg\:hover\:scale-y-95:hover {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .lg\:hover\:scale-y-100:hover {
@@ -70427,23 +70559,23 @@ hr{
   }
 
   .lg\:focus\:scale-50:focus {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .lg\:focus\:scale-75:focus {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .lg\:focus\:scale-90:focus {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .lg\:focus\:scale-95:focus {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .lg\:focus\:scale-100:focus {
@@ -70476,19 +70608,19 @@ hr{
   }
 
   .lg\:focus\:scale-x-50:focus {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .lg\:focus\:scale-x-75:focus {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .lg\:focus\:scale-x-90:focus {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .lg\:focus\:scale-x-95:focus {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .lg\:focus\:scale-x-100:focus {
@@ -70516,19 +70648,19 @@ hr{
   }
 
   .lg\:focus\:scale-y-50:focus {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .lg\:focus\:scale-y-75:focus {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .lg\:focus\:scale-y-90:focus {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .lg\:focus\:scale-y-95:focus {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .lg\:focus\:scale-y-100:focus {
@@ -71796,7 +71928,8 @@ hr{
   }
 
   .lg\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-property: background-color, border-color, color, fill, stroke,
+      opacity, box-shadow, transform;
   }
 
   .lg\:transition-colors {
@@ -71897,27 +72030,27 @@ hr{
 
   .lg\:animate-none {
     -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
 
   .lg\:animate-spin {
     -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
   }
 
   .lg\:animate-ping {
     -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   .lg\:animate-pulse {
     -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .lg\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
-            animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
   }
 }
 
@@ -73122,8 +73255,8 @@ hr{
 
   .xl\:appearance-none {
     -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   .xl\:bg-fixed {
@@ -77549,7 +77682,10 @@ hr{
   }
 
   .xl\:font-sans {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
   }
 
   .xl\:font-serif {
@@ -77557,7 +77693,8 @@ hr{
   }
 
   .xl\:font-mono {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      monospace;
   }
 
   .xl\:font-hairline {
@@ -77797,7 +77934,7 @@ hr{
   }
 
   .xl\:leading-3 {
-    line-height: .75rem;
+    line-height: 0.75rem;
   }
 
   .xl\:leading-4 {
@@ -79106,72 +79243,72 @@ hr{
 
   .xl\:object-contain {
     -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
 
   .xl\:object-cover {
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 
   .xl\:object-fill {
     -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 
   .xl\:object-none {
     -o-object-fit: none;
-       object-fit: none;
+    object-fit: none;
   }
 
   .xl\:object-scale-down {
     -o-object-fit: scale-down;
-       object-fit: scale-down;
+    object-fit: scale-down;
   }
 
   .xl\:object-bottom {
     -o-object-position: bottom;
-       object-position: bottom;
+    object-position: bottom;
   }
 
   .xl\:object-center {
     -o-object-position: center;
-       object-position: center;
+    object-position: center;
   }
 
   .xl\:object-left {
     -o-object-position: left;
-       object-position: left;
+    object-position: left;
   }
 
   .xl\:object-left-bottom {
     -o-object-position: left bottom;
-       object-position: left bottom;
+    object-position: left bottom;
   }
 
   .xl\:object-left-top {
     -o-object-position: left top;
-       object-position: left top;
+    object-position: left top;
   }
 
   .xl\:object-right {
     -o-object-position: right;
-       object-position: right;
+    object-position: right;
   }
 
   .xl\:object-right-bottom {
     -o-object-position: right bottom;
-       object-position: right bottom;
+    object-position: right bottom;
   }
 
   .xl\:object-right-top {
     -o-object-position: right top;
-       object-position: right top;
+    object-position: right top;
   }
 
   .xl\:object-top {
     -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
 
   .xl\:opacity-0 {
@@ -79300,17 +79437,17 @@ hr{
 
   .xl\:overscroll-auto {
     -ms-scroll-chaining: chained;
-        overscroll-behavior: auto;
+    overscroll-behavior: auto;
   }
 
   .xl\:overscroll-contain {
     -ms-scroll-chaining: none;
-        overscroll-behavior: contain;
+    overscroll-behavior: contain;
   }
 
   .xl\:overscroll-none {
     -ms-scroll-chaining: none;
-        overscroll-behavior: none;
+    overscroll-behavior: none;
   }
 
   .xl\:overscroll-y-auto {
@@ -84863,15 +85000,18 @@ hr{
   }
 
   .xl\:shadow-md {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .xl\:shadow-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .xl\:shadow-xl {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .xl\:shadow-2xl {
@@ -84903,15 +85043,18 @@ hr{
   }
 
   .xl\:hover\:shadow-md:hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .xl\:hover\:shadow-lg:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .xl\:hover\:shadow-xl:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .xl\:hover\:shadow-2xl:hover {
@@ -84943,15 +85086,18 @@ hr{
   }
 
   .xl\:focus\:shadow-md:focus {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .xl\:focus\:shadow-lg:focus {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .xl\:focus\:shadow-xl:focus {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   .xl\:focus\:shadow-2xl:focus {
@@ -86922,30 +87068,30 @@ hr{
 
   .xl\:select-none {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .xl\:select-text {
     -webkit-user-select: text;
-       -moz-user-select: text;
-        -ms-user-select: text;
-            user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
   }
 
   .xl\:select-all {
     -webkit-user-select: all;
-       -moz-user-select: all;
-        -ms-user-select: all;
-            user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
   }
 
   .xl\:select-auto {
     -webkit-user-select: auto;
-       -moz-user-select: auto;
-        -ms-user-select: auto;
-            user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
   }
 
   .xl\:align-baseline {
@@ -87337,115 +87483,115 @@ hr{
   .xl\:col-gap-0 {
     grid-column-gap: 0;
     -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
   }
 
   .xl\:col-gap-1 {
     grid-column-gap: 0.25rem;
     -moz-column-gap: 0.25rem;
-         column-gap: 0.25rem;
+    column-gap: 0.25rem;
   }
 
   .xl\:col-gap-2 {
     grid-column-gap: 0.5rem;
     -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
+    column-gap: 0.5rem;
   }
 
   .xl\:col-gap-3 {
     grid-column-gap: 0.75rem;
     -moz-column-gap: 0.75rem;
-         column-gap: 0.75rem;
+    column-gap: 0.75rem;
   }
 
   .xl\:col-gap-4 {
     grid-column-gap: 1rem;
     -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    column-gap: 1rem;
   }
 
   .xl\:col-gap-5 {
     grid-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
-         column-gap: 1.25rem;
+    column-gap: 1.25rem;
   }
 
   .xl\:col-gap-6 {
     grid-column-gap: 1.5rem;
     -moz-column-gap: 1.5rem;
-         column-gap: 1.5rem;
+    column-gap: 1.5rem;
   }
 
   .xl\:col-gap-8 {
     grid-column-gap: 2rem;
     -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-gap: 2rem;
   }
 
   .xl\:col-gap-10 {
     grid-column-gap: 2.5rem;
     -moz-column-gap: 2.5rem;
-         column-gap: 2.5rem;
+    column-gap: 2.5rem;
   }
 
   .xl\:col-gap-12 {
     grid-column-gap: 3rem;
     -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    column-gap: 3rem;
   }
 
   .xl\:col-gap-16 {
     grid-column-gap: 4rem;
     -moz-column-gap: 4rem;
-         column-gap: 4rem;
+    column-gap: 4rem;
   }
 
   .xl\:col-gap-20 {
     grid-column-gap: 5rem;
     -moz-column-gap: 5rem;
-         column-gap: 5rem;
+    column-gap: 5rem;
   }
 
   .xl\:col-gap-24 {
     grid-column-gap: 6rem;
     -moz-column-gap: 6rem;
-         column-gap: 6rem;
+    column-gap: 6rem;
   }
 
   .xl\:col-gap-32 {
     grid-column-gap: 8rem;
     -moz-column-gap: 8rem;
-         column-gap: 8rem;
+    column-gap: 8rem;
   }
 
   .xl\:col-gap-40 {
     grid-column-gap: 10rem;
     -moz-column-gap: 10rem;
-         column-gap: 10rem;
+    column-gap: 10rem;
   }
 
   .xl\:col-gap-48 {
     grid-column-gap: 12rem;
     -moz-column-gap: 12rem;
-         column-gap: 12rem;
+    column-gap: 12rem;
   }
 
   .xl\:col-gap-56 {
     grid-column-gap: 14rem;
     -moz-column-gap: 14rem;
-         column-gap: 14rem;
+    column-gap: 14rem;
   }
 
   .xl\:col-gap-64 {
     grid-column-gap: 16rem;
     -moz-column-gap: 16rem;
-         column-gap: 16rem;
+    column-gap: 16rem;
   }
 
   .xl\:col-gap-px {
     grid-column-gap: 1px;
     -moz-column-gap: 1px;
-         column-gap: 1px;
+    column-gap: 1px;
   }
 
   .xl\:row-gap-0 {
@@ -87903,7 +88049,10 @@ hr{
     --transform-skew-y: 0;
     --transform-scale-x: 1;
     --transform-scale-y: 1;
-    transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+    transform: translateX(var(--transform-translate-x))
+      translateY(var(--transform-translate-y)) rotate(var(--transform-rotate))
+      skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y))
+      scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
   }
 
   .xl\:transform-none {
@@ -87952,23 +88101,23 @@ hr{
   }
 
   .xl\:scale-50 {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .xl\:scale-75 {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .xl\:scale-90 {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .xl\:scale-95 {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .xl\:scale-100 {
@@ -88001,19 +88150,19 @@ hr{
   }
 
   .xl\:scale-x-50 {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .xl\:scale-x-75 {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .xl\:scale-x-90 {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .xl\:scale-x-95 {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .xl\:scale-x-100 {
@@ -88041,19 +88190,19 @@ hr{
   }
 
   .xl\:scale-y-50 {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .xl\:scale-y-75 {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .xl\:scale-y-90 {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .xl\:scale-y-95 {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .xl\:scale-y-100 {
@@ -88082,23 +88231,23 @@ hr{
   }
 
   .xl\:hover\:scale-50:hover {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .xl\:hover\:scale-75:hover {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .xl\:hover\:scale-90:hover {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .xl\:hover\:scale-95:hover {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .xl\:hover\:scale-100:hover {
@@ -88131,19 +88280,19 @@ hr{
   }
 
   .xl\:hover\:scale-x-50:hover {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .xl\:hover\:scale-x-75:hover {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .xl\:hover\:scale-x-90:hover {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .xl\:hover\:scale-x-95:hover {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .xl\:hover\:scale-x-100:hover {
@@ -88171,19 +88320,19 @@ hr{
   }
 
   .xl\:hover\:scale-y-50:hover {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .xl\:hover\:scale-y-75:hover {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .xl\:hover\:scale-y-90:hover {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .xl\:hover\:scale-y-95:hover {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .xl\:hover\:scale-y-100:hover {
@@ -88212,23 +88361,23 @@ hr{
   }
 
   .xl\:focus\:scale-50:focus {
-    --transform-scale-x: .5;
-    --transform-scale-y: .5;
+    --transform-scale-x: 0.5;
+    --transform-scale-y: 0.5;
   }
 
   .xl\:focus\:scale-75:focus {
-    --transform-scale-x: .75;
-    --transform-scale-y: .75;
+    --transform-scale-x: 0.75;
+    --transform-scale-y: 0.75;
   }
 
   .xl\:focus\:scale-90:focus {
-    --transform-scale-x: .9;
-    --transform-scale-y: .9;
+    --transform-scale-x: 0.9;
+    --transform-scale-y: 0.9;
   }
 
   .xl\:focus\:scale-95:focus {
-    --transform-scale-x: .95;
-    --transform-scale-y: .95;
+    --transform-scale-x: 0.95;
+    --transform-scale-y: 0.95;
   }
 
   .xl\:focus\:scale-100:focus {
@@ -88261,19 +88410,19 @@ hr{
   }
 
   .xl\:focus\:scale-x-50:focus {
-    --transform-scale-x: .5;
+    --transform-scale-x: 0.5;
   }
 
   .xl\:focus\:scale-x-75:focus {
-    --transform-scale-x: .75;
+    --transform-scale-x: 0.75;
   }
 
   .xl\:focus\:scale-x-90:focus {
-    --transform-scale-x: .9;
+    --transform-scale-x: 0.9;
   }
 
   .xl\:focus\:scale-x-95:focus {
-    --transform-scale-x: .95;
+    --transform-scale-x: 0.95;
   }
 
   .xl\:focus\:scale-x-100:focus {
@@ -88301,19 +88450,19 @@ hr{
   }
 
   .xl\:focus\:scale-y-50:focus {
-    --transform-scale-y: .5;
+    --transform-scale-y: 0.5;
   }
 
   .xl\:focus\:scale-y-75:focus {
-    --transform-scale-y: .75;
+    --transform-scale-y: 0.75;
   }
 
   .xl\:focus\:scale-y-90:focus {
-    --transform-scale-y: .9;
+    --transform-scale-y: 0.9;
   }
 
   .xl\:focus\:scale-y-95:focus {
-    --transform-scale-y: .95;
+    --transform-scale-y: 0.95;
   }
 
   .xl\:focus\:scale-y-100:focus {
@@ -89581,7 +89730,8 @@ hr{
   }
 
   .xl\:transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-property: background-color, border-color, color, fill, stroke,
+      opacity, box-shadow, transform;
   }
 
   .xl\:transition-colors {
@@ -89682,26 +89832,26 @@ hr{
 
   .xl\:animate-none {
     -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
 
   .xl\:animate-spin {
     -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
   }
 
   .xl\:animate-ping {
     -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   .xl\:animate-pulse {
     -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .xl\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
-            animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
   }
 }

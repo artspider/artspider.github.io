@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Subcontrata</title>
     <!-- Styles -->
@@ -10,11 +11,17 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.8/dist/alpine.js" defer></script>
+    @livewireStyles    
 </head>
 <body class=" bg-light-back ">
 
+<div class=" w-3/4 fixed ml-20 mt-20 " id="turn">
+    <p class=" bg-black text-xl text-center text-red-step p-8 rounded-lg">Por favor rota tu dispositivo!</p>
+</div>
+<div id="content">
     <header
-        class=" mx-auto bg-black lg:flex lg:flex-row justify-between "
+        class=" w-full fixed z-50 top-0 left-0 transition duration-700 mx-auto bg-black lg:flex lg:flex-row justify-between "
+        id = "home"
         x-data = "{ isOpen: false}"
         @keydown.escape = "isOpen = false"
         :class = "{ 'shadow-lg bg-gray-900' : isOpen, 'bg-black' : !isOpen }"
@@ -46,16 +53,17 @@
         </div>
         <!-- Menu lista -->
         <nav
-            class="menu__lista lg:flex lg:items-center"
+            class="menu__lista lg:flex lg:justify-end lg:items-center"
             @click.away = "isOpen = false"
             x-show.transition =  "true"
             :class = "{  'block shadow-3xl': isOpen,'hidden' : !isOpen }"
         >
             <ul class="flex flex-col lg:h-full lg:flex-row lg:items-center lg:justify-end text-white font-semibold ml-6 lg:mr-4 pt-10 pb-6 lg:pt-0 lg:pb-0">
-                <li class="mr-8 px-2 py-1      lg:mx-0 lg:my-0 rounded hover:bg-gray-800"> <a href="#"> Home </a> </li>
-                <li class="mt-1 mr-8 px-2 py-1 lg:mx-0 lg:my-0 rounded hover:bg-gray-800"> <a href="#"> ¿Cómo funciona? </a> </li>
-                <li class="mt-1 mr-8 px-2 py-1 lg:mx-0 lg:my-0 rounded hover:bg-gray-800"> <a href="#"> Nuestros expertos </a> </li>
-                <li class="mt-1 mr-8 px-2 py-1 lg:ml-0 lg:mr-0 lg:my-0 rounded hover:bg-gray-800"> <a href="#"> Registrate </a> </li>
+                <li class="mr-8 px-2 py-1      lg:mx-0 lg:my-0 rounded hover:bg-gray-800"> <a class=" transition duration-700 " href="#home"> Home </a> </li>
+                <li class="mt-1 mr-8 px-2 py-1 lg:mx-0 lg:my-0 rounded hover:bg-gray-800"> <a class=" transition duration-700 " href="#como__funciona"> ¿Cómo funciona? </a> </li>
+                <li class="mt-1 mr-8 px-2 py-1 lg:mx-0 lg:my-0 rounded hover:bg-gray-800"> <a class=" transition duration-700 " href="#nuestros__expertos"> Nuestros expertos </a> </li>
+                <li class="mt-1 mr-8 px-2 py-1 lg:ml-0 lg:mr-0 lg:my-0 rounded hover:bg-gray-800"> <a href="#registro"> Registrate </a> </li>
+                <li class="ml-2 mr-8     px-3 py-1         lg:mr-0 lg:my-0 rounded bg-red-700 text-white hover:bg-red-500 hover:text-white"> <a href="">Ingresa</a>  </li>
             </ul>
         </nav>
         <!-- Termina Menu lista -->
@@ -73,7 +81,16 @@
         </div>
     </footer>
 
-    </header>
+</div>
+  @livewireScripts
+    <script type="text/javascript">
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("header");
+            var logo = document.querySelector(".logo");
+            header.classList.toggle("sticky", window.scrollY > 0);
+            logo.classList.toggle("hidden", window.scrollY > 0);
+        })
+    </script>
 
 </body>
 </html>
